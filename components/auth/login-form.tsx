@@ -8,6 +8,9 @@ import { CardWrapper } from './card-wrapper'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
+import { FormError } from '../form-error'
+import { FormSuccess } from '../form-success'
+import { Button } from '../ui/button'
 import {
   Form,
   FormControl,
@@ -29,6 +32,10 @@ export const LoginForm = () => {
     },
   })
 
+  const onSubmit = (data: LoginRequest) => {
+    console.log(data)
+  }
+
   return (
     <CardWrapper
       headerLabel="Welcome back"
@@ -37,8 +44,8 @@ export const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(() => {})} className="space-y-6">
-          <div className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="space-y-4">
             <FormField
               control={form.control}
               name="email"
@@ -63,17 +70,18 @@ export const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="john.doe@example.com"
-                      type="email"
-                    />
+                    <Input {...field} placeholder="******" type="password" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
+          <FormSuccess message="" />
+          <FormError message="" />
+          <Button className="w-full font-bold" type="submit">
+            Login
+          </Button>
         </form>
       </Form>
     </CardWrapper>
