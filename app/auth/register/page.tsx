@@ -1,7 +1,6 @@
-import { LoginForm } from '@/components/auth/login-form'
+import { RegisterForm } from '@/components/auth/register-form'
 
 const RegisterPage = () => {
-  return <LoginForm />
+  return <RegisterForm />
 }
-// TODO assistir o vídeo codewithantonio minuto 11:31 aula register form
 export default RegisterPage
