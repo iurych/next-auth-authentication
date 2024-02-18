@@ -1,5 +1,6 @@
 'use server'
 
+import { getUserByEmail } from '@/data/user'
 import { db } from '@/lib/db'
 import { RegisterSchema } from '@/schema'
 import bcrypt from 'bcrypt'
@@ -17,13 +18,9 @@ export const register = async (values: LoginRequest) => {
 
   const { email, name, password } = validateFields.data
 
-  const user = await db.user.findUnique({
-    where: {
-      email,
-    },
-  })
+  const checkUser = await getUserByEmail(email)
 
-  if (user) {
+  if (checkUser) {
     return { error: 'User already exists!' }
   }
 
@@ -36,7 +33,7 @@ export const register = async (values: LoginRequest) => {
     },
   })
 
-  //TODO send verification email token
+  // TODO send verification email token
 
-  return { success: 'Email sent!' }
+  return { success: 'User created' }
 }
