@@ -33,7 +33,7 @@ export const register = async (values: LoginRequest) => {
     },
   })
 
-  // TODO send verification email token
+  // TODO send verification email token and if success send to logging page
 
   return { success: 'User created' }
 }

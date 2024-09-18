@@ -10,6 +10,8 @@ import {
 
 const { auth } = NextAuth(authConfig)
 
+// TODO fix this
+// constinuar na aula middleware & login minutagem: 12:09
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
@@ -35,8 +37,7 @@ export default auth((req) => {
 
   return null
 })
-// Optionally, don't invoke Middleware on some paths
-// Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 }
