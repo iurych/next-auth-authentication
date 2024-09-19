@@ -3,7 +3,7 @@
 import { getUserByEmail } from '@/data/user'
 import { db } from '@/lib/db'
 import { RegisterSchema } from '@/schema'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import * as zod from 'zod'
 // equivalent as api route
 

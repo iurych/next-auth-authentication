@@ -8,7 +8,7 @@
 export const publicRoute = ['/']
 
 /**
- * @description: Privete route
+ * @description: Private route
  * An array of protected route that are accessible to authenticated users
  * These routes does require authentication
  * @type {String[]}
@@ -18,7 +18,7 @@ export const authRoutes = ['/auth/login', '/auth/register']
 /**
  * @description Prefix route
  * Prefix for API authenticated routes
- * Routes that start with this prefix are to authenticates purposes
+ * Routes that start with this prefix are to API authenticates purposes
  * @type {String}
  */
 export const apiAuthPrefix = '/api/auth'
