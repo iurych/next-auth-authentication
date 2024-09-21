@@ -40,6 +40,8 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (data: LoginRequest) => {
+    console.log('data: ', data)
+
     // alternativelly axios.post('/your/api/route)
     setError('')
     setSuccess('')
