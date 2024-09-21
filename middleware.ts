@@ -21,21 +21,19 @@ export default auth((req) => {
   const isAuthRoute = authRoutes.includes(nextUrl.pathname)
 
   if (isApiAuthRoute) {
-    return undefined
+    return
   }
 
   if (isAuthRoute) {
     if (isLoggedIn) {
       return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
     }
-    return undefined
+    return
   }
 
   if (!isLoggedIn && !isPublicRoute) {
     return Response.redirect(new URL('/auth/login', nextUrl))
   }
-
-  return undefined
 })
 
 export const config = {
