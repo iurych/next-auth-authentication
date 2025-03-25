@@ -1,9 +1,9 @@
 'use client' // because we are using a hook inside a component
 
 import { RegisterSchema } from '@/schema'
-import * as z from 'zod'
+import * as z from '@/@node_modules/zod'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition } from '@/@node_modules/@types/react'
 
 import { CardWrapper } from './card-wrapper'
 

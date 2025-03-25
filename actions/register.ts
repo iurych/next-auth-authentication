@@ -1,10 +1,10 @@
 'use server'
 
+import bcrypt from '@/@node_modules/@types/bcryptjs'
+import * as zod from '@/@node_modules/zod'
 import { getUserByEmail } from '@/data/user'
 import { db } from '@/lib/db'
 import { RegisterSchema } from '@/schema'
-import bcrypt from 'bcryptjs'
-import * as zod from 'zod'
 // equivalent as api route
 
 type LoginRequest = zod.infer<typeof RegisterSchema>

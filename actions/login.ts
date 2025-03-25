@@ -1,11 +1,11 @@
 'use server'
-// equivalent as api route
+// equivalent as an api route
 
+import { AuthError } from '@/@node_modules/next-auth'
+import * as zod from '@/@node_modules/zod'
 import { signIn } from '@/auth'
 import { DEFAULT_LOGIN_REDIRECT } from '@/route'
 import { LoginSchema } from '@/schema'
-import { AuthError } from 'next-auth'
-import * as zod from 'zod'
 
 type LoginRequest = zod.infer<typeof LoginSchema>
 

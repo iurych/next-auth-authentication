@@ -1,9 +1,9 @@
 'use client' // because we are using a hook inside a component
 
+import * as z from '@/@node_modules/zod'
 import { LoginSchema } from '@/schema'
-import * as z from 'zod'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition } from '@/@node_modules/@types/react'
 
 import { CardWrapper } from './card-wrapper'
 
@@ -15,12 +15,12 @@ import { FormError } from '../form-error'
 import { FormSuccess } from '../form-success'
 import { Button } from '../ui/button'
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
 } from '../ui/form'
 import { Input } from '../ui/input'
 
@@ -39,16 +39,14 @@ export const LoginForm = () => {
     },
   })
 
-  const onSubmit = (data: LoginRequest) => {
-    console.log('data: ', data)
-
+  const onSubmit = (values: LoginRequest) => {
     // alternativelly axios.post('/your/api/route)
     setError('')
     setSuccess('')
     startTransition(() => {
-      login(data).then((data) => {
-        setError(data.error)
-        setSuccess(data.success)
+      login(values).then((v) => {
+        setError(v?.error)
+        setSuccess('ok')
       })
     })
   }

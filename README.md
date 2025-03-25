@@ -1,1 +1,1 @@
-continuar middleware 40:37
+verificar as aulas de register form a partir daqui e corrigir o login

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/@node_modules/next/navigation'
 
 interface LoginButtonProps {
   children: React.ReactNode

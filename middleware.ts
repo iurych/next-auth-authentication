@@ -1,11 +1,11 @@
+import NextAuth from '@/@node_modules/next-auth'
 import authConfig from '@/auth.config'
-import NextAuth from 'next-auth'
 
 import {
-  DEFAULT_LOGIN_REDIRECT,
-  apiAuthPrefix,
-  authRoutes,
-  publicRoute,
+    DEFAULT_LOGIN_REDIRECT,
+    apiAuthPrefix,
+    authRoutes,
+    publicRoute,
 } from '@/route'
 
 const { auth } = NextAuth(authConfig)
