@@ -3,7 +3,7 @@
 import * as z from '@/@node_modules/zod'
 import { LoginSchema } from '@/schema'
 
-import { useState, useTransition } from '@/@node_modules/@types/react'
+import { useState, useTransition } from 'react'
 
 import { CardWrapper } from './card-wrapper'
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "./node_modules/.bin/next dev",
     "build": "next build",
     "build-nx": "next build",
     "start": "next start",
@@ -19,7 +19,7 @@
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "next": "^14.2.13",
+    "next": "^14.2.26",
     "next-auth": "^5.0.0-beta.11",
     "react": "^18",
     "react-dom": "^18",

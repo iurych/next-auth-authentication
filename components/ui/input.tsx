@@ -1,4 +1,4 @@
-import * as React from '@/@node_modules/@types/react'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
