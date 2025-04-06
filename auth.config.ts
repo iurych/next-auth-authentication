@@ -1,10 +1,8 @@
-import bcrypt from '@/@node_modules/bcryptjs'
-import type { NextAuthConfig } from '@/@node_modules/next-auth'
-import Credentials from '@/@node_modules/next-auth/providers/credentials'
 import { getUserByEmail } from '@/data/user'
 import { LoginSchema } from '@/schema'
-
-
+import bcrypt from 'bcryptjs'
+import type { NextAuthConfig } from 'next-auth'
+import Credentials from 'next-auth/providers/credentials'
 
 export default {
   providers: [

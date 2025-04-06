@@ -1,7 +1,7 @@
 'use client' // because we are using a hook inside a component
 
-import * as z from '@/@node_modules/zod'
 import { LoginSchema } from '@/schema'
+import * as z from 'zod'
 
 import { useState, useTransition } from 'react'
 
@@ -15,12 +15,12 @@ import { FormError } from '../form-error'
 import { FormSuccess } from '../form-success'
 import { Button } from '../ui/button'
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from '../ui/form'
 import { Input } from '../ui/input'
 
