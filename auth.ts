@@ -12,6 +12,10 @@ export const {
   signOut,
 } = NextAuth({
   adapter: PrismaAdapter(db),
+  pages: {
+    signIn: '/auth/login',
+    error: '/auth/error',
+  },
   events: {
     async linkAccount({ user }) {
       await db.user.update({

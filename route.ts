@@ -13,7 +13,7 @@ export const publicRoute = ['/']
  * These routes does require authentication
  * @type {String[]}
  */
-export const authRoutes = ['/auth/login', '/auth/register']
+export const authRoutes = ['/auth/login', '/auth/register', '/auth/error']
 
 /**
  * @description Prefix route
