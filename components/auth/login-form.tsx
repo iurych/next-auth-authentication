@@ -3,6 +3,7 @@
 import { LoginSchema } from '@/schema'
 import * as z from 'zod'
 
+import { useSearchParams } from 'next/navigation'
 import { useState, useTransition } from 'react'
 
 import { CardWrapper } from './card-wrapper'
@@ -27,6 +28,12 @@ import { Input } from '../ui/input'
 type LoginRequest = z.infer<typeof LoginSchema>
 
 export const LoginForm = () => {
+  const searchParams = useSearchParams()
+  const urlError =
+    searchParams.get('error') === 'OAuthAccountNotLinked'
+      ? 'Email is already in use'
+      : ''
+
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
@@ -40,13 +47,15 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (values: LoginRequest) => {
-    // alternativelly axios.post('/your/api/route)
     setError('')
     setSuccess('')
     startTransition(() => {
       login(values).then((v) => {
-        setError(v?.error)
-        setSuccess('ok')
+        if (v?.error) {
+          setError(v.error)
+        } else {
+          setSuccess('ok')
+        }
       })
     })
   }
@@ -98,8 +107,8 @@ export const LoginForm = () => {
               )}
             />
           </div>
+          <FormError message={error || urlError} />
           <FormSuccess message={success} />
-          <FormError message={error} />
           <Button
             disabled={isPending}
             className="w-full font-bold"
