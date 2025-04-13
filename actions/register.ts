@@ -2,6 +2,7 @@
 
 import { getUserByEmail } from '@/data/user'
 import { db } from '@/lib/db'
+import { sendVerificationEmail } from '@/lib/mail'
 import { generateVerificationToken } from '@/lib/tokens'
 import { RegisterSchema } from '@/schema'
 import bcrypt from 'bcryptjs'
@@ -36,7 +37,7 @@ export const register = async (values: LoginRequest) => {
 
   const verificationToken = await generateVerificationToken(email)
 
-  // TODO send verification email token and if success send to logging page
+  await sendVerificationEmail(verificationToken.email, verificationToken.token)
 
   return { success: 'Confirmation email sent!' }
 }
