@@ -10,8 +10,6 @@ import {
 
 const { auth } = NextAuth(authConfig)
 
-// TODO fix this
-
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
@@ -36,6 +34,7 @@ export default auth((req) => {
   }
 })
 
+// it just simple invoke the function above
 export const config = {
   matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 }

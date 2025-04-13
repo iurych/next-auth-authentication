@@ -1,5 +1,6 @@
 import { LoginButton } from '@/components/auth/login-button'
 import { Button } from '@/components/ui/button'
+import { generateVerificationToken } from '@/lib/tokens'
 import { cn } from '@/lib/utils'
 import { Poppins } from 'next/font/google'
 
@@ -9,6 +10,7 @@ const font = Poppins({
 })
 
 export default function Home() {
+  console.log(generateVerificationToken('1234567890'))
   return (
     <main
       className="
