@@ -50,13 +50,15 @@ export const LoginForm = () => {
     setError('')
     setSuccess('')
     startTransition(() => {
-      login(values).then((v) => {
-        if (v?.error) {
-          setError(v.error)
-        } else {
-          setSuccess('ok')
-        }
-      })
+      login(values).then(
+        (v: { error?: string; success?: string } | undefined) => {
+          if (v?.error) {
+            setError(v.error)
+          } else {
+            setSuccess(v?.success)
+          }
+        },
+      )
     })
   }
 
